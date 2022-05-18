@@ -1,0 +1,168 @@
+/*importando fontes 
+Oswald - Regular 400 e Bold 700
+Open Sans - Regular 400 e Regular 400 Italic
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Oswald:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    animation: gradient 10s ease-in-out alternate infinite;
+    background: linear-gradient(90deg,#EFE9D3,#B8D36A,#DEC8B6) no-repeat;
+    background-size: 300% 300%;
+    background-attachment: fixed;
+}
+
+header .line{
+    background-color: rgb(154, 198, 75);
+    height: 10px;
+}
+
+header .container{
+    max-width: 1600px;
+    margin: auto;
+}
+
+.header-area{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.header-left img{
+    width: 100px;
+    height: 100px;
+    margin-left: 18px;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-search form{
+    display: flex;
+}
+.header-search input{
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    padding:7px 10px;
+    border: 1px solid rgb(154, 198, 75);
+    outline: 0;
+    margin-left: 18px;
+}
+
+.header-search button{
+    border: 0px;
+    background: transparent;
+}
+
+.header-search button img{
+    width: 25px;
+    height: 25px;
+    margin-left: -45px;
+    cursor: pointer;
+}
+
+.header-menu{
+    margin-left: 6px;
+    cursor: pointer;
+    margin-right: 18px;
+}
+
+section .banner-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .banner-area h1{
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+    line-height: 80px;
+}
+
+.banner-left{
+    margin-left: 50px;
+}
+
+.banner-left span{
+    font-size: 20px;
+}
+
+.banner-right img{
+    height: 700px;
+    width: 700px;
+    margin-right: 0px;
+}
+
+@media (max-width : 950px){
+    .banner-right img{
+        height: calc(50vw + 100px);
+        width: calc(50vw + 100px);
+        min-width: none;
+    }
+
+    section .banner-area h1{
+        font-size: 60px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width : 650px){
+    section .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "t"
+                             "b";
+    }
+
+    section .container .banner-left{
+        grid-area: b;
+        text-align: center;
+        margin-left: 0%;
+    }
+
+    section .banner-area h1{
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    section .container .banner-left span{
+        font-size: 18px;
+        width: 90vw;
+    }
+
+    section .container .banner-right{
+        text-align: center;
+        grid-area: t;
+    }
+
+    section .container .banner-right img{
+        min-width: 330px;
+        min-height: 330px;
+    }
+}
+
+
+@keyframes gradient{
+    from{
+        background-position: 0 50%;
+    }
+
+    to{
+        background-position: 100% 50%;
+    }
+}

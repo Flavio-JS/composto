@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Oswald:wght@400;700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    animation: gradient 5s ease-in-out alternate infinite;
+    background: linear-gradient(45deg, #EEE8D2, #94C535, #7A413A) no-repeat;
+    background-size: 300% 300%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 33.3vh 33.3vh 33.3vh;
+    grid-template-areas: "t t t"
+                         "l m r"
+                         "b b b";
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    font-size: 300%;
+    font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+main header{
+    justify-self: center;
+    grid-area: m;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60% 40%;
+    grid-template-areas: "ti ti ti"
+                         "co co co ";
+}
+
+main header .titulo{
+    text-align: center
+}
+
+main .container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "in ho te"
+}
+
+main header .titulo{
+    grid-area: ti;
+}
+
+main header .titulo h1{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    animation: titulo 5s ease-in-out forwards;
+    opacity: 0;
+}
+
+main header .container{
+    grid-area: co;
+}
+
+main header .container #instagram{
+    grid-area: in;
+    opacity: 0;
+    animation: icon_instagram 1s ease-in-out forwards;
+    animation-delay: 0s;
+}
+
+main header .container #home{
+    grid-area: ho;
+    opacity: 0;
+    animation: icon_home 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+main header .container #text{
+    grid-area: te;
+    opacity: 0;
+    animation: icon_text 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes gradient{
+    from{
+        background-position: 0 50%;
+    }
+
+    to{
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes titulo{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes icon_instagram{
+    from{
+        transform: translateX(-50%);
+    }
+
+    to{
+        transform: translateX(-33.4%);
+        opacity: 1;
+    }
+}
+
+@keyframes icon_home{
+    from{
+        transform: translateX(-50%);
+    }
+
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes icon_text{
+    from{
+        transform: translateX(-50%);
+    }
+
+    to{
+        transform: translateX(50%);
+        opacity: 1;
+    }
+}
+
+@media (max-width : 1082px){
+    h1{
+        font-size: 70px;
+    }
+}
+
+@media (max-width : 790px){
+    h1{
+        font-size: 100%;
+    }
+}
