@@ -9,50 +9,29 @@ main{
     animation: gradient 5s ease-in-out alternate infinite;
     background: linear-gradient(45deg, #EEE8D2, #94C535, #7A413A) no-repeat;
     background-size: 300% 300%;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 33.3vh 1fr;
-    /*
-        t -> top
-        l -> left
-        m -> mid
-        r -> right
-        b -> base
-    */
-    grid-template-areas: "t t t" 
-                         "l m r"
-                         "b b b";
-    justify-content: center;
     color: white;
     height: 100vh;
-    font-size: 300%;
     font-family: 'Oswald', sans-serif;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
 }
 
+h1{
+    font-size: 400%;
+}
+
 main .maincontainer{
-    justify-self: center;
-    grid-area: m;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 60% 40%;
-    grid-template-areas: "ti ti ti"
-                         "co co co ";
-}
-
-main .maincontainer .titulo{
-    text-align:center;
-}
-
-main .container{
-    text-align: center;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
 }
 
-main .maincontainer .titulo{
-    grid-area: ti;
+main .maincontainer .container{
+    display: flex;
+    width: 469px;
 }
 
 main .maincontainer .titulo h1{
@@ -62,26 +41,25 @@ main .maincontainer .titulo h1{
     opacity: 0;
 }
 
-main .maincontainer .container{
-    grid-area: co;
-}
-
 main .maincontainer .container #instagram{
-    grid-area: in;
+    text-align: left;
+    width: 156.3px;
     opacity: 0;
     animation: icon_instagram 1s ease-in-out forwards;
     animation-delay: 0s;
 }
 
 main .maincontainer .container #home{
-    grid-area: ho;
+    text-align: center;
+    width: 156.3px;
     opacity: 0;
     animation: icon_home 1s ease-in-out forwards;
     animation-delay: 1s;
 }
 
 main .maincontainer .container #text{
-    grid-area: te;
+    text-align: right;
+    width: 156.3px;
     opacity: 0;
     animation: icon_text 1s ease-in-out forwards;
     animation-delay: 2s;
@@ -109,62 +87,77 @@ main .maincontainer .container #text{
 
 @keyframes icon_instagram{
     from{
-        transform: translateX(-50%);
+        transform: translateX(-50px);
     }
 
     to{
-        transform: translateX(-33.4%);
+        transform: translateX(0px);
         opacity: 1;
     }
 }
 
 @keyframes icon_home{
     from{
-        transform: translateX(-50%);
+        transform: translateX(-50px);
     }
 
     to{
-        transform: translateX(0%);
+        transform: translateX(0px);
         opacity: 1;
     }
 }
 
 @keyframes icon_text{
     from{
-        transform: translateX(-50%);
+        transform: translateX(-50px);
     }
 
     to{
-        transform: translateX(50%);
+        transform: translateX(0px);
         opacity: 1;
     }
 }
 
-@media (min-width : 791px) and (max-width : 1082px){
-    main .maincontainer{
-        height: 200px;
-    }
+@media (min-width : 351px) and (max-width : 500px){
     h1{
-        font-size: 70px;
+        font-size: 250%;
+    }
+
+    main .maincontainer .container{
+        width: 293px;
+    }
+
+    main .maincontainer .container #instagram{
+        width: 97.6px;
+    }
+    
+    main .maincontainer .container #home{
+        width: 97.6px;
+    }
+    
+    main .maincontainer .container #text{
+        width: 97.6px;
     }
 }
 
-@media (min-width : 528px) and (max-width : 790px){
-    main .maincontainer{
-        height: 130px;
-        margin-top: 6vh;
-    }
+@media (max-width : 350px){
     h1{
-        font-size: 100%;
+        font-size: 200%;
     }
-}
 
-@media (max-width : 527px){
-    main .maincontainer{
-        height: 70px;
-        margin-top: 10vh;
+    main .maincontainer .container{
+        width: 234px;
     }
-    h1{
-        font-size: 60%;
+
+    main .maincontainer .container #instagram{
+        width: 78px;
+    }
+    
+    main .maincontainer .container #home{
+        width: 78px;
+    }
+    
+    main .maincontainer .container #text{
+        width: 78px;
     }
 }
