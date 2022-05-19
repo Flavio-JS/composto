@@ -12,7 +12,14 @@ main{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 33.3vh 33.3vh 33.3vh;
-    grid-template-areas: "t t t"
+    /*
+        t -> top
+        l -> left
+        m -> mid
+        r -> right
+        b -> base
+    */
+    grid-template-areas: "t t t" 
                          "l m r"
                          "b b b";
     justify-content: center;
@@ -24,7 +31,7 @@ main{
     -webkit-text-stroke-color: #000;
 }
 
-main header{
+main .maincontainer{
     justify-self: center;
     grid-area: m;
     display: grid;
@@ -34,48 +41,46 @@ main header{
                          "co co co ";
 }
 
-main header .titulo{
-    text-align: center
+main .maincontainer .titulo{
+    text-align:center;
 }
 
 main .container{
     text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: "in ho te"
+    display: flex;
+    justify-content: space-between;
 }
 
-main header .titulo{
+main .maincontainer .titulo{
     grid-area: ti;
 }
 
-main header .titulo h1{
+main .maincontainer .titulo h1{
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #000;
     animation: titulo 5s ease-in-out forwards;
     opacity: 0;
 }
 
-main header .container{
+main .maincontainer .container{
     grid-area: co;
 }
 
-main header .container #instagram{
+main .maincontainer .container #instagram{
     grid-area: in;
     opacity: 0;
     animation: icon_instagram 1s ease-in-out forwards;
     animation-delay: 0s;
 }
 
-main header .container #home{
+main .maincontainer .container #home{
     grid-area: ho;
     opacity: 0;
     animation: icon_home 1s ease-in-out forwards;
     animation-delay: 1s;
 }
 
-main header .container #text{
+main .maincontainer .container #text{
     grid-area: te;
     opacity: 0;
     animation: icon_text 1s ease-in-out forwards;
@@ -135,14 +140,20 @@ main header .container #text{
     }
 }
 
-@media (max-width : 1082px){
+@media (min-width : 791px) and (max-width : 1082px){
     h1{
         font-size: 70px;
     }
 }
 
-@media (max-width : 790px){
+@media (min-width : 528px) and (max-width : 790px){
     h1{
         font-size: 100%;
+    }
+}
+
+@media (max-width : 527px){
+    h1{
+        font-size: 60%;
     }
 }
