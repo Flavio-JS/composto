@@ -11,7 +11,7 @@ main{
     background-size: 300% 300%;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 33.3vh 33.3vh 33.3vh;
+    grid-template-rows: 1fr 33.3vh 1fr;
     /*
         t -> top
         l -> left
@@ -141,18 +141,29 @@ main .maincontainer .container #text{
 }
 
 @media (min-width : 791px) and (max-width : 1082px){
+    main .maincontainer{
+        height: 200px;
+    }
     h1{
         font-size: 70px;
     }
 }
 
 @media (min-width : 528px) and (max-width : 790px){
+    main .maincontainer{
+        height: 130px;
+        margin-top: 6vh;
+    }
     h1{
         font-size: 100%;
     }
 }
 
 @media (max-width : 527px){
+    main .maincontainer{
+        height: 70px;
+        margin-top: 10vh;
+    }
     h1{
         font-size: 60%;
     }
